@@ -50,7 +50,6 @@ buscaInput.addEventListener('input', () => {
 
 // Botão pagamento
 btnPagamento.addEventListener('click', () => {
-  alert('Indo para a página de pagamento...');
   window.location.href = 'pagamento.html';
 });
 
