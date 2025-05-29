@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pagamento - Pizzaria Fornalha</title>
+  <link rel="stylesheet" href="pagamento.css" />
+</head>
+<body>
+  <header>
+    <h1>Pagamento</h1>
+    <a href="cardapio.html" class="voltar"> Voltar</a>
+  </header>
+
+  <form id="form-pagamento">
+    <label for="nome-cartao">Nome no cartão:</label>
+    <input type="text" id="nome-cartao" required />
+
+    <label for="numero-cartao">Número do cartão:</label>
+    <input type="text" id="numero-cartao" maxlength="16" required />
+
+    <label for="validade">Validade (MM/AA):</label>
+    <input type="text" id="validade" placeholder="MM/AA" maxlength="5" required />
+
+    <label for="cvv">CVV:</label>
+    <input type="password" id="cvv" maxlength="3" required />
+
+    <button type="submit">Pagar</button>
+  </form>
+
+  <p id="msg-pagamento" class="mensagem"></p>
+
+  <script>
+    const formPagamento = document.getElementById('form-pagamento');
+    const msgPagamento = document.getElementById('msg-pagamento');
+
+    // Pega o total do pedido salvo no localStorage (definido na página do cardápio)
+    const totalPedido = localStorage.getItem('totalPedido') || '0.00';
+
+    formPagamento.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nome = document.getElementById('nome-cartao').value;
+      const numero = document.getElementById('numero-cartao').value;
+      const forma = 'Cartão'; // aqui pode expandir para outros meios futuramente
+      const valor = parseFloat(totalPedido);
+      const data = new Date().toLocaleDateString('pt-BR');
+
+      // Recupera pagamentos já salvos (ou cria array vazio)
+      const pagamentos = JSON.parse(localStorage.getItem('pagamentos')) || [];
+
+      // Adiciona o pagamento atual
+      pagamentos.push({ valor, forma, data });
+
+      // Salva no localStorage
+      localStorage.setItem('pagamentos', JSON.stringify(pagamentos));
+
+      msgPagamento.textContent = `Pagamento efetuado com sucesso! Obrigado, ${nome}.`;
+      formPagamento.reset();
+
+      // Opcional: limpar o pedido e total do localStorage
+      localStorage.removeItem('totalPedido');
+    });
+  </script>
+</body>
+</html>

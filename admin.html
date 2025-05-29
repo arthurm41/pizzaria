@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Painel do Administrador</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header>
+    <h1>Painel do Administrador</h1>
+  </header>
+
+  <nav>
+    <button onclick="mostrarSecao('pizzas')">Pizzas</button>
+    <button onclick="mostrarSecao('reservas')">Reservas</button>
+    <button onclick="mostrarSecao('pagamentos')">Pagamentos</button>
+    <a href="relatorio.html">
+      <button>Relatório de Vendas</button>
+    </a>
+  </nav>
+
+  <main>
+    <section id="pizzas" class="secao ativa">
+      <h2>Gerenciar Pizzas</h2>
+      <form id="form-adicionar-pizza">
+        <input type="text" id="nome-pizza" placeholder="Nome da pizza" required>
+        <input type="number" id="preco-pizza" placeholder="Preço" step="0.01" required>
+        <button type="submit">Adicionar Pizza</button>
+      </form>
+      <ul id="lista-pizzas">
+        <!-- Lista de pizzas adicionadas -->
+      </ul>
+    </section>
+
+    <section id="reservas" class="secao">
+      <h2>Reservas Realizadas</h2>
+      <ul id="lista-reservas">
+        <li>Maria - 20/05/2025 às 19:00 - 2 pessoas</li>
+        <li>João - 22/05/2025 às 20:30 - 4 pessoas</li>
+        <!-- Mock de dados. Integração futura com backend -->
+      </ul>
+    </section>
+
+    <section id="pagamentos" class="secao">
+      <h2>Pagamentos Recebidos</h2>
+      <ul id="lista-pagamentos">
+        <li>R$ 89,90 - Cartão - 20/05/2025</li>
+        <li>R$ 49,90 - Pix - 19/05/2025</li>
+        <!-- Mock de dados -->
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Pizzaria Fornalha - Admin</p>
+  </footer>
+
+  <script src="admin.js"></script>
+</body>
+</html>

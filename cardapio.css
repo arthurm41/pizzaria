@@ -1,0 +1,113 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff8f0;
+  color: #333;
+  padding: 20px;
+  margin: 0;
+}
+
+header {
+  background-color: #e88d04;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+header .voltar {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.cardapio-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color: #d65c00;
+  border-bottom: 2px solid #f0c38e;
+  padding-bottom: 5px;
+  margin-top: 0;
+}
+
+#busca-pizza {
+  padding: 10px;
+  width: 100%;
+  margin: 10px 0 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#lista-pizzas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#lista-pizzas button {
+  background-color: #e88d04;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  flex: 1 1 calc(50% - 10px);
+  text-align: center;
+}
+
+#lista-pizzas button:hover {
+  background-color: #f0a012;
+}
+
+#pedido {
+  list-style: none;
+  margin-top: 15px;
+  padding-left: 0;
+  min-height: 50px;
+}
+
+#pedido li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+#total {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#btn-pagamento {
+  margin-top: 25px;
+  padding: 12px 25px;
+  background-color: #f7bd00;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: none;
+}
+
+#btn-pagamento:hover {
+  background-color: #c18100;
+}

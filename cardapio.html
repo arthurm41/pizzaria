@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cardápio - Pizzaria Fornalha</title>
+  <link rel="stylesheet" href="cardapio.css" />
+</head>
+<body>
+  <header>
+    <h1>Cardápio</h1>
+    <a href="pizzaria.html" class="voltar">Voltar</a>
+  </header>
+
+  <section class="cardapio-container">
+
+    <h2>Escolha suas pizzas</h2>
+    <input type="text" id="busca-pizza" placeholder="Buscar pizza..." />
+
+    <div id="lista-pizzas">
+      <button data-nome="Margherita" data-preco="30.00">Margherita - R$30,00</button>
+      <button data-nome="Calabresa" data-preco="35.00">Calabresa - R$35,00</button>
+      <button data-nome="Quatro Queijos" data-preco="38.00">Quatro Queijos - R$38,00</button>
+      <button data-nome="Frango com Catupiry" data-preco="40.00">Frango c/ Catupiry - R$40,00</button>
+      <button data-nome="Portuguesa" data-preco="37.00">Portuguesa - R$37,00</button>
+    </div>
+
+    <h2>Seu pedido</h2>
+    <ul id="pedido"></ul>
+    <p id="total"></p>
+
+    <button id="btn-pagamento">Ir para Pagamento</button>
+  </section>
+
+  <script src="cardapio.js"></script>
+</body>
+</html>
